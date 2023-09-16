@@ -14,10 +14,6 @@ const ContactsPage = () => {
 
   return (
     <div className="contacts-page">
-      <div className="advertising">
-        <img className="advertising-img" src={Banner} alt="banner-about-us" />
-      </div>
-
       <div className="contact">
         <h3 className="contact-title">{ourContactsTr.title}</h3>
         <div className="contact-block">

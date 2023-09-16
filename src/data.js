@@ -66,19 +66,19 @@ export const footerContacts = [
 export const contacts = [
   {
     icon: Phone,
-    title: "+996 554 789 456",
+    title: "+996 700 16 09 23",
   },
   {
     icon: Whatsapp,
-    title: "+996 554 789 456",
+    title: "+996 700 16 09 23",
   },
   {
     icon: Telegram,
-    title: "+996 553 707 437",
+    title: "+996 700 16 09 23",
   },
   {
     icon: Mail,
-    title: "bonton@gmail.com",
+    title: "agrigram@gmail.com",
   },
 ];
 

@@ -23,9 +23,6 @@ const AboutUsPage = () => {
 
   return (
     <div className="about-us-page">
-      <div className="advertising">
-        <img className="advertising-img" src={Banner} alt="banner-about-us" />
-      </div>
       <div className="about-us">
         <h3 className="about-us-title">{aboutUsTr.title}</h3>
         <div className="about-us-block">
