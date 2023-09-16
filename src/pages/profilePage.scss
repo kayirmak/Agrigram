@@ -1,0 +1,11 @@
+.profile-page {
+	@apply mb-[12.5rem] mt-[6.25rem] sm:mt-[3rem] sm:mb-[3rem];
+
+	&-container {
+		@apply max-w-[1440px] mx-auto px-[4.375rem] md:px-[3rem];
+	}
+
+	&-block {
+		@apply  shadow-grayShadow pt-12 pl-12 pb-20 h-full md:shadow-none md:px-0; 
+	}
+}

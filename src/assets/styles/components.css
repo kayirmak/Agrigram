@@ -1,0 +1,11 @@
+.search {
+    @apply relative h-11;
+}
+
+.search-icon {
+    @apply absolute top-1/2 -translate-y-1/2 left-4 text-xl
+}
+
+.search-input {
+    @apply border-2 border-grey-bright text-grey-bright rounded-2xl text-xl h-full pl-12 outline-none
+}

@@ -1,0 +1,23 @@
+.popular {
+    @apply max-w-[1440px];
+
+    &-title {
+        @apply text-4xl font-bold mb-12 px-16 lm:px-7;
+    }
+
+    &-items-scroll {
+        @apply overflow-x-scroll px-16 pb-32 lm:px-7;
+
+        &::-webkit-scrollbar {
+            @apply w-0; 
+        }
+    }
+
+    &-items {
+        @apply flex gap-x-5 w-max;
+
+        a {
+            @apply w-[20rem];
+        }
+    }
+}

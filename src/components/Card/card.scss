@@ -1,0 +1,67 @@
+.card {
+    @apply pb-5 rounded-xl shadow-[0_9.5px_19px_0_rgba(204,204,204,0.4)] relative transition-all;
+
+    &:hover {
+        @apply scale-[1.03];
+    }
+
+    &-img {
+        @apply h-96;
+
+        img {
+            @apply w-full h-full object-contain rounded-t-xl;
+        }
+    }
+
+    &-info {
+        @apply px-4;
+
+        &__title {
+            @apply text-xl font-bold mt-3 md:text-[1.27rem];
+        }
+
+        &__availability {
+            @apply font-bold text-main mt-3 md:text-[1.09rem];
+        }
+
+        &__shop {
+            @apply flex items-center gap-x-2 mt-4;
+
+            &-logo {
+                @apply w-4 h-4 rounded-full;
+
+                img {
+                    @apply w-full h-full object-cover;
+                }
+            }
+
+            &-name {
+                @apply text-sm lg:text-[0.90rem];
+            }
+        }
+
+        &__btns {
+            @apply flex gap-x-4 mt-14 sm:justify-between sm:items-center;
+
+            &-buy {
+                @apply font-bold w-56 h-10 bg-main rounded-xl text-white md:text-[1.09rem] sm:items-center sm:bg-white sm:text-black sm:flex xb:w-36;
+            }
+            
+            &-card {
+                @apply w-10 h-10 rounded-full bg-main-bright bg-opacity-50 lg:text-[3rem] sm:h-[1.81rem] sm:w-[1.81rem];
+                
+                img {
+                    @apply mx-auto w-6;
+                }
+            }
+
+            &-fav {
+                @apply w-10 h-10 rounded-full absolute bg-[#FFC7B0] top-5 right-3;
+
+                img {
+                    @apply mx-auto w-5;
+                }
+            }
+        }
+    }
+}

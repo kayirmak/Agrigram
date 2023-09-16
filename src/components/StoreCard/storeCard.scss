@@ -1,0 +1,44 @@
+.store-card {
+    @apply flex flex-col justify-between bg-[#F2F2F2] w-[22.5rem] h-64 rounded-3xl px-6 pt-7 pb-8 md:w-[20rem] sm:w-[22.5rem];
+
+    &-head {
+
+        @apply flex justify-between;
+
+        &__schedule {
+            @apply text-[1.4rem] font-medium sm:text-[1.09rem];
+        }
+
+        &__rating { 
+            @apply flex gap-x-3;
+
+            img {
+                @apply w-6;
+            }
+
+            h4 {
+                @apply text-2xl font-medium sm:text-[1.09rem];
+            }
+        }
+    }
+
+    &-middle {
+        @apply flex items-center justify-center gap-x-5;
+
+        &-logo {
+            @apply w-16 h-16 rounded-full bg-white relative;
+
+            img {
+                @apply w-3/4 h-3/4 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-contain absolute;
+            }
+        }
+
+        &-name {
+            @apply text-4xl font-medium sm:text-[1.45rem];
+        }
+    }
+
+    &-foot {
+        @apply text-[1.4rem] text-grey-light md:text-[1.09rem];
+    }
+}

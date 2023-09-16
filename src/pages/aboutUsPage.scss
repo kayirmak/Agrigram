@@ -1,0 +1,35 @@
+.about-us-page {
+	@apply max-w-[1440px] mx-auto;
+}
+
+.advertising {
+	@apply h-[15.625rem] w-full lg:hidden;
+
+	&-img {
+		@apply object-cover h-full w-full;
+	}
+}
+
+.about-us {
+  @apply mx-auto mt-12 mb-24 px-[4rem] md:mt-[1.81rem] sm:px-7;
+
+	&-block {
+		@apply h-full flex gap-x-[7.54rem] justify-between md:items-center md:gap-y-8 md:flex-col lg:items-start ;
+
+		&-description {
+			@apply flex flex-col gap-y-8;
+	
+			.description-text {
+				@apply text-2xl font-normal lg:text-[1.45rem] md:max-w-full;
+			}
+		}
+	}
+
+  &-title {
+    @apply font-bold text-[2.25rem] mb-8 sm:text-center;
+  }
+
+	.contact-el {
+		@apply md:mx-auto;
+	}
+}

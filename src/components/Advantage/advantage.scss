@@ -1,0 +1,18 @@
+.advantage {
+    @apply px-16 max-w-[1440px] flex justify-center gap-x-14 pt-36 pb-48 sm:flex-wrap sm:px-12;
+    &-item {
+        @apply flex flex-col gap-y-5 w-[24.5rem] md:w-full items-center text-center sm:mb-[3.75rem] sm:last:mb-0;
+
+        &__title {
+            @apply font-medium text-3xl lm:text-[1.45rem] ;
+        }
+
+        &__desc {
+            @apply font-medium text-2xl text-center lm:text-[1.09rem];
+        }
+
+        img {
+            @apply w-24;
+        }
+    }
+}

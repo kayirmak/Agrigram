@@ -1,0 +1,6 @@
+.pagination {
+    @apply flex gap-x-5 mx-auto justify-center;
+    &-item {
+        @apply flex justify-center items-center bg-main-bright text-white rounded-3xl w-[4.3rem] h-11 font-medium text-[1.25rem] cursor-pointer;
+    }
+}

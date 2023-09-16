@@ -1,0 +1,19 @@
+.languages {
+  @apply flex flex-col items-center max-w-[39.5rem] w-full mx-auto md:px-12 xb:px-0;
+
+  .languages-block {
+    @apply flex justify-between items-center shadow-grayShadow w-full h-[3.75rem] p-4 rounded-2xl cursor-pointer mb-[1.563rem];
+
+    .languages-el {
+      @apply flex items-center;
+
+      span {
+        @apply ml-[1.313rem] font-medium text-[1.125rem] text-[#504E59] lg:text-[1.4rem];
+      }
+    }
+  }
+
+  button {
+    @apply mt-[6rem] text-[1.45rem] bg-main rounded-xl text-white h-[4rem] w-full max-w-[30rem] mx-auto;
+  }
+}

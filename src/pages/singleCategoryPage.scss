@@ -1,0 +1,60 @@
+.category-page {
+    @apply max-w-[1440px] mx-auto;
+
+    &-title {
+        @apply text-4xl font-bold mb-12 px-16 mt-16;
+    }
+
+    &-filter {
+        @apply max-w-[69rem] mx-auto pb-24;
+
+        .search-input {
+            @apply w-full;
+        }
+
+        .filter-by-val {
+            @apply grid grid-cols-3 gap-x-20;
+
+            &-item {
+                @apply mt-7;
+            }
+
+            label {
+                @apply text-xl font-bold;
+            }
+
+            input {
+                @apply w-[8.5rem] h-14 bg-[#F2F2F2] text-grey rounded-xl px-6 z-0 appearance-none;
+
+                &:last-child {
+                    @apply ml-8;
+                }
+            }
+
+            button {
+                @apply row-start-3 row-end-4 mt-10 font-medium h-12 bg-grey-darkest text-white rounded-xl;
+            }
+
+            .filter-select {
+                @apply relative h-14 mt-6;
+
+                select {
+                    @apply w-full h-full bg-[#F2F2F2] text-grey rounded-xl px-6 z-0 appearance-none
+                }
+
+                &-icon {
+                    @apply absolute top-7 right-8 z-10 text-grey;
+                }
+            }
+            
+        }
+    }
+
+		.items {
+			@apply max-w-[75rem] mx-auto grid grid-cols-[repeat(4,_17rem)] gap-y-10 pb-16 justify-between md:grid-cols-3 md:justify-center md:gap-x-[2rem]; 
+		}
+
+		.col {
+			@apply sm:gap-x-[3rem] sm:grid-cols-2 xb:gap-x-5;
+		}
+}

@@ -1,0 +1,53 @@
+.my-data {
+  @apply flex flex-col items-center px-[4.09rem] max-w-full w-full xb:px-0;
+
+  .my-data-el {
+    @apply flex flex-col max-w-[53.125rem] w-full;
+
+    .full-name {
+      @apply flex items-center justify-center mb-[4.75rem];
+
+      img {
+        @apply mr-[3.5rem];
+      }
+
+      span {
+        @apply text-[1.331rem] font-bold;
+      }
+
+      .spantwo {
+        @apply text-[1rem] font-medium;
+      }
+    }
+
+    form {
+      @apply flex flex-col w-full max-w-full;
+
+      .form-el {
+        @apply flex gap-x-[3rem] w-full mb-[7.188rem] md:flex-col;
+
+				div {
+					@apply max-w-[25.5rem] md:max-w-full w-full;
+					
+					.input-my-data {
+						@apply px-[1rem] text-[1.25rem] w-full  h-[3.125rem] border-[0.125rem] rounded-[0.625rem] border-main focus:outline-none;
+					}
+
+					.label-my-data {
+						@apply block font-semibold text-[1.25rem] text-black mb-[0.938rem] sm:mb-2;
+					}
+				}
+
+      }
+			
+			button {
+				@apply bg-main;
+			}
+    }
+  }
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,63 @@
+.cart-details-products-item {
+    @apply rounded-xl shadow-[0_9px_18px_rgba(204,204,204,.4)] relative;
+
+    .remove-item {
+        @apply absolute top-3 right-6 cursor-pointer w-4;
+    }
+
+    &-img {
+        @apply flex items-center py-[.63rem] pl-3 gap-x-4;
+
+        img {
+            @apply w-[6.3rem] h-[6.3rem] object-cover rounded-xl;
+        }
+
+        .img-info {
+            @apply flex flex-col gap-y-5 text-center sm:gap-y-3;
+
+            &__title {
+                @apply font-bold text-sm lg:text-[1.1rem];
+            }
+
+            &__from {
+                @apply text-grey-light text-xs lg:text-[1rem];
+            }
+
+            &__store {
+							span {
+                @apply text-grey-light text-xs font-medium lg:text-[1rem];
+							}
+            }
+        }
+    }
+
+    &-quantity {
+        button {
+            @apply w-5 h-5 rounded-full bg-black relative disabled:bg-grey-light;
+
+            img {
+                @apply w-2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:w-3 lg:h-3;
+            }
+        }
+
+        span {
+            @apply align-sub mx-[.63rem];
+        }
+    }
+
+    &-price {
+        @apply text-lg font-bold text-main lg:text-[1.3rem] sm:hidden;
+    }
+
+    &-total {
+        @apply text-lg font-bold text-main lg:text-[1.3rem] sm:hidden;
+    }
+}
+
+.store {
+	@apply hidden sm:block text-[1.09rem]
+}
+
+.price {
+	@apply hidden sm:block text-[1.40rem] font-bold text-main;
+}

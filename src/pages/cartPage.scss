@@ -1,0 +1,24 @@
+.cart {
+    @apply max-w-[1440px] mx-auto pb-64 md:py-10;
+
+    &-empty {
+        @apply pt-[8.15rem] flex flex-col items-center pb-40;
+
+        &-img {
+            @apply w-80;
+        }
+
+        &-title {
+            @apply font-semibold text-4xl mt-12;
+        }
+
+        &-subtitle {
+            @apply font-medium text-3xl mt-12;
+        }
+
+        &-submit {
+            @apply block text-base mt-28 w-[20.7rem] h-14 bg-main rounded-lg text-white mx-auto;
+        }
+
+    }
+}

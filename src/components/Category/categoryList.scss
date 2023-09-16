@@ -1,0 +1,17 @@
+.category-list {
+    @apply flex flex-col gap-y-5 py-12 pl-8 border-2 w-max rounded-[1.25rem];
+
+    &-item {
+        @apply cursor-pointer transition-all duration-200 hover:bg-grey-bright pr-8;
+
+        a {
+            @apply flex gap-x-3 items-center py-3 px-2 relative
+            hover:after:content-[""] hover:after:bg-cat-item-icon-arrow hover:after:w-[1.08rem] hover:after:h-[1.1rem] hover:after:ml-[.1rem] hover:after:absolute
+            hover:after:-right-5;
+
+            .category-list-item__title {
+                @apply text-xl;
+            }
+        }
+    }
+}

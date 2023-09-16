@@ -1,0 +1,15 @@
+.skip {
+	@apply font-bold text-[1rem] text-right cursor-pointer mb-[8.125rem];
+}
+.title {
+	@apply font-semibold text-[2.25rem] mb-[2rem] text-center;
+}
+.subtitle {
+	@apply font-normal text-[1rem] text-center;
+}
+.img {
+	@apply max-w-[21.875rem] h-[18.75rem];
+}
+.arrow {
+	@apply absolute right-[8.75rem] bottom-[-15.625rem] w-[5.188rem] h-[2.188rem];
+}

@@ -1,0 +1,63 @@
+.category-page {
+  @apply max-w-[1440px] mx-auto lm:px-4;
+
+  &-title {
+      @apply text-4xl font-bold mb-12 px-16 mt-16;
+  }
+
+  &-filter {
+      @apply max-w-[75rem] mx-auto pb-24;
+
+      .search-input {
+          @apply w-full;
+      }
+
+      .filter-by-val {
+          @apply grid  grid-cols-3 gap-x-20 md:gap-x-4 sm:grid-cols-2 xb:grid-cols-1;
+
+          &-item {
+              @apply mt-7;
+          }
+					
+
+          label {
+              @apply text-xl font-bold sm:text-main;
+          }
+
+          input {
+              @apply w-[8.5rem] h-14 bg-[#F2F2F2] text-grey rounded-xl px-6 z-0 appearance-none lg:text-[1.2rem];
+
+              &:last-child {
+                  @apply ml-8 md:ml-4;
+              }
+          }
+
+          button {
+              @apply row-start-3 row-end-4 mt-10 font-medium h-12 bg-grey-darkest text-white rounded-xl;
+          }
+
+          .filter-select {
+              @apply relative h-14 mt-6;
+
+              select {
+                  @apply w-full h-full bg-[#F2F2F2] text-grey rounded-xl px-6 z-0 appearance-none lg:text-[1.2rem];
+              }
+
+              &-icon {
+                  @apply absolute top-7 right-8 z-10 text-grey;
+              }
+          }
+          
+      }
+  }
+
+	.col {
+		@apply sm:gap-x-[3rem] xb:gap-x-5;
+        @screen lm {
+            @apply grid-cols-[repeat(3,_1fr)];
+        }
+        @screen sm {
+            @apply sm:grid-cols-2;
+        }
+	}
+}

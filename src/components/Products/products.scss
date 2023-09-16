@@ -1,0 +1,15 @@
+.products {
+    @apply px-16 pt-14 lm:px-7;
+
+    &-title {
+        @apply text-4xl font-bold mb-12;
+    }
+
+    &-items {
+        @apply grid grid-cols-4 gap-x-5 gap-y-12 items-center lm:grid-cols-3;
+    }
+
+    &-btn {
+        @apply text-xl font-medium w-52 h-11 bg-grey-darkest text-white rounded-xl block mt-20 mx-auto;
+    }
+}

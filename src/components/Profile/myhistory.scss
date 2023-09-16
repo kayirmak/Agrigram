@@ -1,0 +1,98 @@
+.my-history {
+  @apply flex flex-col items-center max-w-[39.5rem]  w-full mx-auto md:pl-[1rem] xb:px-0;
+
+  .my-history-date {
+    @apply mb-[2.813rem];
+
+    .input-date {
+      @apply p-[1.125rem] rounded-[1.25rem] focus:outline-none w-[9.813rem] h-[3.625rem]  border-[2px] border-black;
+    }
+  }
+
+  .my-history-block {
+    @apply w-full flex flex-col gap-y-9 max-w-full lg:text-[1.81rem];
+
+    h2 {
+      @apply text-[1.25rem] font-semibold text-black mb-[2.938rem];
+    }
+
+    .history-block {
+      @apply pt-[0.813rem] pl-[2rem] xb:pl-[1rem] pb-[1.25rem] pr-[1rem] max-w-full w-full  shadow-grayShadow rounded-[0.938rem];
+
+      .history-comp {
+        @apply flex mb-[1.875rem] justify-between;
+
+        .avatar {
+          img {
+            @apply h-[3.125rem] w-[3.125rem]  mb-[0.563rem];
+          }
+
+          span {
+            @apply text-[0.875rem] font-semibold text-black lg:text-[1rem];
+          }
+        }
+
+        .history-el {
+          @apply flex justify-between max-w-[21.625rem] md:max-w-[19rem] w-full xb:flex-col xb:max-w-[7rem] xb:h-0;
+
+          div {
+            @apply flex flex-col items-center;
+
+            h3 {
+              @apply xb:hidden text-[#4F4F4F] font-semibold text-[1rem] mb-[1.313rem] lg:text-[1.1rem];
+            }
+
+            h4 {
+              @apply text-[#FF5714] font-semibold text-[1rem] lg:text-[1.1rem] xb:flex;
+            }
+          }
+        }
+
+        .arrow {
+          @apply flex flex-col items-end justify-between pt-1 xb:w-[6rem];
+
+          span {
+            @apply text-[0.75rem] font-medium text-[#4F4F4F] lg:text-[0.90rem];
+          }
+
+          img {
+            @apply w-[2rem] h-[2rem] cursor-pointer lg:mb-6 sm:cursor-default;
+          }
+
+          .active {
+            @apply rotate-90 ease-in-out duration-300;
+          }
+        }
+      }
+
+      .history-bottom {
+        @apply pl-[7.75rem] pr-[4.75rem] sm:pl-[5.75rem] sm:pr-[2rem] xb:pl-0 xb:pr-[0rem];
+
+        div {
+          @apply flex justify-between mb-4 ;
+        }
+
+        h3 {
+          @apply font-normal text-base  lg:text-[1.20rem];
+        }
+
+        h4 {
+          @apply w-[10rem]  text-base text-left lg:text-[1.2rem];
+        }
+
+        .bold {
+          @apply text-black font-bold;
+        }
+
+        .normal {
+          @apply text-main font-normal lg:text-[1.3rem];
+        }
+      }
+    }
+  }
+}
+
+
+.data {
+	@apply hidden sm:block text-[0.875rem] font-semibold text-black lg:text-[1rem] text-right mb-1;
+}

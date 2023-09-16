@@ -1,0 +1,69 @@
+.message {
+  @apply relative mx-auto  py-[3.75rem] px-[4.375rem] max-w-[53.875rem] h-[54.375rem] border border-[#E8ECF4] rounded-2xl;
+
+  h2 {
+    @apply text-2xl font-bold text-center mb-6;
+  }
+  h3 {
+    @apply text-xl  font-bold text-center mb-[3rem];
+  }
+
+  .message-form {
+    .message-form-block {
+      @apply flex flex-col mb-6;
+
+      label {
+        @apply text-[#4F4F4F] font-medium text-[1rem] mb-[0.5rem];
+      }
+
+      textarea,
+      input {
+        @apply w-full bg-[#F2F2F2] h-[3.938rem] rounded-[1.063rem] placeholder:text-[1rem] text-[1rem] px-[1.375rem];
+      }
+
+      textarea {
+        @apply py-[1.5rem] min-h-[10rem] mb-[4.375rem];
+      }
+    }
+
+    div {
+      @apply flex justify-center;
+
+      button {
+        @apply max-w-[20.625rem] mb-[3rem];
+      }
+    }
+  }
+
+  .message-success {
+    @apply absolute bottom-20 left-[32.6%] border border-[#E8ECF4] p-[1.5rem] max-w-[18.75rem] h-[23.5rem] bg-white rounded-[1.625rem];
+
+    div {
+      @apply relative;
+
+      .close {
+        @apply w-[26px] h-[26px] absolute right-0 top-[-2rem] cursor-pointer;
+      }
+
+      .message-error {
+        @apply mt-[2rem] mx-auto;
+      }
+
+      h3 {
+        @apply text-[1.25rem] font-semibold text-center mt-[1.563rem] mb-[3.625rem];
+      }
+
+      h4 {
+        @apply text-[1.25rem] font-semibold text-center mt-[1.563rem] mb-4;
+      }
+
+      p {
+        @apply text-center text-base mb-6;
+      }
+
+      button {
+        @apply text-base font-semibold w-full bg-[#FF5714] text-white rounded-lg h-[3.5rem];
+      }
+    }
+  }
+}

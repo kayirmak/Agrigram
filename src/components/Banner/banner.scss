@@ -1,0 +1,41 @@
+.banner {
+    @apply px-0;
+
+    &-img {
+        @apply mx-auto;
+    }
+
+		&-items-scroll {
+			@apply hidden lm:block overflow-x-scroll px-16 lm:px-[1.8rem] xb:px-[1.36rem];
+
+			&::-webkit-scrollbar {
+					@apply w-0; 
+			}
+		}
+
+		&-items {
+			@apply flex gap-x-6 w-max;
+
+			a {
+				img {
+					@apply object-cover rounded-2xl;
+
+					@screen lm {
+						@apply w-[36rem] h-64;
+					}
+
+					@screen md {
+						@apply w-[25.188rem] h-[13.125rem];
+					}
+				}
+			}
+
+			img {
+				@apply w-[25.188rem] h-[13.125rem] object-cover rounded-2xl;
+			}
+		}
+}
+
+.swiper-pagination-bullet-active {
+	@apply bg-main;
+}

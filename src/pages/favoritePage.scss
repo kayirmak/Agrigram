@@ -1,0 +1,30 @@
+.favorite {
+    @apply max-w-[1440px] mx-auto md:px-4;
+
+    &-content {
+        @apply grid grid-cols-[repeat(4,_minmax(0,_1fr))] px-16 mt-36 pb-28 gap-x-5 gap-y-11 md:grid-cols-[repeat(3,_minmax(0,_1fr))] md:px-0 sm:mt-10;
+    }
+
+		.col {
+			@apply sm:grid-cols-2;
+		}
+    
+    &-empty {
+        @apply flex flex-col items-center pt-56 pb-28;
+        img {
+            @apply w-80 mb:w-[10.5rem];
+        }
+    
+        h2 {
+            @apply font-semibold text-[2.75rem] mt-[10.8rem] sm:text-3xl  mb:text-xl mb:mt-[5rem];
+        }
+    
+        h3 {
+            @apply font-medium text-[2rem] w-[27.4rem] mt-16 text-center mb:text-base mb:mt-8 mb:w-[13rem];
+        }
+    
+        button {
+            @apply bg-main text-white font-semibold w-[20.7rem] h-14 rounded-lg mt-[10.5rem] mb:mt-[3.75rem];
+        }
+    }
+}

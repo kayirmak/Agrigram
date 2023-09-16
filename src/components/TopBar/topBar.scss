@@ -1,0 +1,21 @@
+.top-bar {
+  @apply hidden sm:block relative z-10;
+
+  &-block {
+    @apply flex items-center justify-between h-[4rem] bg-[#FF5714] px-4;
+
+		.input-search {
+			@apply max-w-[14.375rem] border-white rounded-2xl border-[1px] placeholder:text-white text-white bg-[#FF5714]
+		}
+
+		p {
+			@apply py-[1.36rem] px-2 font-medium text-sm text-white
+		}
+
+		.active {
+			@apply bg-[#FF8C5F]
+		}
+  }
+
+ 
+}

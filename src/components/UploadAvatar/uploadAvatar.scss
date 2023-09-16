@@ -1,0 +1,15 @@
+.upload-avatar {
+  @apply mr-14;
+}
+
+.avatar-img {
+  input {
+    @apply w-0 opacity-0 absolute invisible;
+  }
+
+  label {
+    img {
+      @apply w-28 h-28 object-cover rounded-full border-[1px] border-black cursor-pointer;
+    }
+  }
+}

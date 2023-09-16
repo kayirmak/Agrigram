@@ -1,0 +1,56 @@
+.questions {
+  @apply flex flex-col justify-between max-w-[41.25rem] w-full mx-auto md:px-12 xb:px-0;
+
+  h2 {
+    @apply font-bold text-[2.25rem] mb-[1.875rem] lg:text-[2rem] xb:text-[1.50rem] sm:text-center;
+  }
+
+  input {
+    @apply text-[1.125rem] placeholder:text-[1.125rem] focus:outline-none bg-[#f0f0f0] rounded-[0.938rem] h-[2.75rem] max-w-full w-full pl-16 pr-4 mb-[3.938rem] lg:placeholder:text-[1.4rem] lg:text-[1.4rem] lg:h-12;
+  }
+	
+  .search {
+    @apply absolute left-[0.500rem] top-0 w-[2.375rem] h-[2.375rem] lg:top-[3px];
+  }
+
+  .mark {
+    @apply w-full;
+
+    div {
+      @apply mb-8;
+
+      .mark-el {
+        @apply flex justify-between items-center border-b-2 border-[#c1bdc1] mb-[2.563rem] last:m-0;
+
+        h3 {
+          @apply font-medium text-[1.25rem] text-[#504E59] lg:text-[1.45rem];
+        }
+
+        .arrow-one {
+          @apply cursor-pointer rotate-180 ease-in-out duration-300;
+        }
+
+        .arrow-two {
+          @apply cursor-pointer ease-in-out duration-300;
+        }
+
+      }
+    }
+  }
+
+  .questions-el {
+    @apply flex flex-col items-center;
+
+    .questions-el-text {
+      @apply text-[#847C83] font-medium text-[1rem] lg:text-[1.45rem] md:text-center;
+    }
+
+    button {
+      @apply font-medium text-[1.125rem] text-main border-[0.190rem] rounded-[0.625rem] border-main w-[21.25rem] h-[3.125rem] mt-[1.875rem] lg:text-[1.63rem];
+    }
+  }
+}
+
+.title {
+  @apply text-[0.875rem] font-medium text-[#847C83] mb-2 last:m-0 lg:text-[1.27rem];
+}

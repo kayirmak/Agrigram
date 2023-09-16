@@ -1,0 +1,7 @@
+.partners {
+    @apply flex gap-x-24 pt-8 pb-32 px-16 overflow-x-scroll justify-between lm:px-7;
+
+    &::-webkit-scrollbar {
+        @apply w-0; 
+    }
+}

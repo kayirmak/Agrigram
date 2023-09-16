@@ -1,0 +1,23 @@
+.contacts {
+    @apply w-[26.2rem] pt-7 pb-16 px-10 break-all flex flex-col items-center gap-y-9 rounded-[1.25rem] shadow-[0_10px_20px_0_rgba(204,204,204,0.4)];
+
+    &-title {
+        @apply font-semibold text-3xl;
+    }
+
+    &-items {
+        @apply flex flex-col gap-y-9;
+
+        &__item {
+            @apply flex items-center gap-x-6 text-2xl font-medium w-fit;
+
+            img {
+                @apply w-16;
+            }
+        }
+    }
+
+    &-btn {
+       @apply font-semibold text-xl w-80 h-12 bg-grey-darkest text-white rounded-lg  
+    }
+}
