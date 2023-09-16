@@ -16,10 +16,10 @@ module.exports = {
 				"mb": { "max": "375px" }
 			},
 			colors: {
-				"main": "#FF5714",
-				"main-dark": "#F14500",
-				"main-light": "#FF6E34",
-				"main-bright": "#FF8F62",
+				"main": "#14988B",
+				"main-dark": "#14988B",
+				"main-light": "#14988B",
+				"main-bright": "#14988B",
 				"white": "#FFFEFF",
 				"black": "#000000",
 				"grey": "#4F4F4F",
