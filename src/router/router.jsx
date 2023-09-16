@@ -41,177 +41,175 @@ import UserAgreementPage from "../pages/UserAgreement";
 import PrivacyPolicyPage from "../pages/PrivacyPolicy";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <MainLayout />,
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        index: true,
+        element: <Main />,
+      },
+      {
+        path: "search-product",
+        element: <SearchPage />,
+      },
+      {
+        path: "about-us",
+        element: <AboutUsPage />,
+      },
+      {
+        path: "contacts",
+        element: <ContactsPage />,
+      },
+      {
+        path: "category",
+        element: <AllCategoriesPage />,
+      },
+      {
+        path: "category/:categoryId",
+        element: <SingleCategoryPage />,
+      },
+      {
+        path: "products/:productId",
+        element: <SingleCardPage />,
+      },
+      {
+        path: "stores",
+        element: <StoresPage />,
+      },
+      {
+        path: "stores/:storeId",
+        element: <SingleStorePage />,
+      },
+      {
+        path: "stores/apple",
+        element: <SingleStorePage />,
+      },
+      {
+        path: "wish-list",
+        element: <FavoritePage />,
+      },
+      {
+        path: "cart",
+        element: <CartPage />,
+      },
+      {
+        path: "technical-support",
+        element: <TechnicalSupport />,
+      },
+      {
+        path: "user-agreement-page",
+        element: <UserAgreementPage />,
+      },
+      {
+        path: "privacy-policy-page",
+        element: <PrivacyPolicyPage />,
+      },
+      {
+        path: "checkout",
+        element: <RequireCart />,
         children: [
-            {
-                index: true,
-                element: <Main />
-            },
-            {
-                path: "search-product",
-                element: <SearchPage />
-            },
-            {
-                path: "about-us",
-                element: <AboutUsPage />
-            },
-            {
-                path: "contacts",
-                element: <ContactsPage />
-            },
-            {
-                path: "category",
-                element: <AllCategoriesPage />,
-            },
-            {
-                path: "category/:categoryId",
-                element: <SingleCategoryPage />
-            },
-            {
-                path: "products/:productId",
-                element: <SingleCardPage />
-            },
-            {
-                path: "stores",
-                element: <StoresPage />,
-            },
-            {
-                path: "stores/:storeId",
-                element: <SingleStorePage />
-            },
-            {
-                path: "stores/apple",
-                element: <SingleStorePage />
-            },
-            {
-                path: "wish-list",
-                element: <FavoritePage />
-            },
-            {
-                path: "cart",
-                element: <CartPage />
-                
-            },
-            {
-                path: "technical-support",
-                element: <TechnicalSupport />
-            },
-            {
-                path: "user-agreement-page",
-                element: <UserAgreementPage />
-            },
-            {
-                path: "privacy-policy-page",
-                element: <PrivacyPolicyPage />
-            },
-            {
-                path: "checkout",
-                element: <RequireCart />,
-                children: [
-                    {
-                        index: true,
-                        element: <Checkout />,
-                    },
-                    {
-                        path: "confirm",
-                        element: <Confirm />
-                    },
-                    {
-                        path: "completed",
-                        element: <Completed />
-                    },
-										{
-											path: "my-data",
-											element: <MyData />
-									},
-                ]
-            },
-            {
-                path: "profile",
-                element: <RequireAuth />,
-                children: [
-                    {
-                        element: <ProfilePage />,
-                        children: [
-                            {
-                                path: "my-data",
-                                element: <MyData />
-                            },
-                            {
-                                path: "my-bonus",
-                                element: <MyBonus />
-                            },
-                            {
-                                path: "my-history",
-                                element: <MyHistory />
-                            },
-                            {
-                                path: "settings/notifications",
-                                element: <Notifications />
-                            },
-                            {
-                                path: "settings/spoken-language",
-                                element: <Languages />
-                            },
-                            {
-                                path: "settings/clarity",
-                                element: <Questions />
-                            },
-                            {
-                                path: "settings/delete-account",
-                                element: <DeleteAccount />
-                            },
-                            {
-                                path: "user-agreement",
-                                element: <UserAgreement />
-                            },
-                            {
-                                path: "privacy-policy",
-                                element: <PrivacyPolicy />
-                            }
-                        ]
-                    },
-                ]
-            },
-            {
-                path: "auth",
-                element: <WelcomeLayout />,
-                children: [
-                    {
-                        index: true,
-                        element: <EmptyProfile />
-                    },
-                    {
-                        path: "sign-in",
-                        element: <Authorization />
-                    },
-                    {
-                        path: "sign-up",
-                        element: <Register />
-                    },
-                    {
-                        path: "forgot-password",
-                        element: <ForgotPassword />,
-                        
-                    },
-                    {
-                        path: "verification",
-                        element: <Verification />
-                    },
-                    {
-                        path: "new-password",
-                        element: <NewPassword />
-                    },
-                    {
-                        path: "confirmation",
-                        element: <Сonfirmation />
-                    }
-                ]
-            }
-        ]
-    }
+          {
+            index: true,
+            element: <Checkout />,
+          },
+          {
+            path: "confirm",
+            element: <Confirm />,
+          },
+          {
+            path: "completed",
+            element: <Completed />,
+          },
+          {
+            path: "my-data",
+            element: <MyData />,
+          },
+        ],
+      },
+      {
+        path: "profile",
+        element: <RequireAuth />,
+        children: [
+          {
+            element: <ProfilePage />,
+            children: [
+              {
+                path: "my-data",
+                element: <MyData />,
+              },
+              {
+                path: "my-bonus",
+                element: <MyBonus />,
+              },
+              {
+                path: "my-history",
+                element: <MyHistory />,
+              },
+              {
+                path: "settings/notifications",
+                element: <Notifications />,
+              },
+              {
+                path: "settings/spoken-language",
+                element: <Languages />,
+              },
+              {
+                path: "settings/clarity",
+                element: <Questions />,
+              },
+              {
+                path: "settings/delete-account",
+                element: <DeleteAccount />,
+              },
+              {
+                path: "user-agreement",
+                element: <UserAgreement />,
+              },
+              {
+                path: "privacy-policy",
+                element: <PrivacyPolicy />,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        path: "auth",
+        element: <WelcomeLayout />,
+        children: [
+          {
+            index: true,
+            element: <EmptyProfile />,
+          },
+          {
+            path: "sign-in",
+            element: <Authorization />,
+          },
+          {
+            path: "sign-up",
+            element: <Register />,
+          },
+          {
+            path: "forgot-password",
+            element: <ForgotPassword />,
+          },
+          {
+            path: "verification",
+            element: <Verification />,
+          },
+          {
+            path: "new-password",
+            element: <NewPassword />,
+          },
+          {
+            path: "confirmation",
+            element: <Сonfirmation />,
+          },
+        ],
+      },
+    ],
+  },
 ]);
 
 export default router;

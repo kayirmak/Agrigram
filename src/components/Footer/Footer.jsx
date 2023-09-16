@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
 
-import Logo from "../../assets/imgs/footer-icons/logo.svg";
+import Logo from "../../assets/imgs/agri/LogoAgri.svg";
 
 import { footerContacts, footerNavLinks } from "../../data";
 
-import FooterKurgunIcon from "../../assets/imgs/footer-icons/footer-kurgun-icon.svg";
+import FooterKurgunIcon from "../../assets/imgs/agri/LogoAgri.svg";
 
 import "./footer.scss";
 
@@ -32,9 +32,9 @@ function Footer() {
 
   return (
     <footer className="footer">
-        <Link to="/" className="footer-logo">
-          <img src={Logo} alt="kurjun" />
-        </Link>
+      <Link to="/" className="footer-logo">
+        <img src={Logo} alt="kurjun" />
+      </Link>
 
       {size <= 640 ? (
         <nav className="footer-nav flex items-center flex-col">
@@ -45,9 +45,7 @@ function Footer() {
                   onClick={() => handleClickIsActive(idx)}
                   className="nav-el"
                 >
-                  <h3 className="nav-title">
-                    {footerTr.titles[title]}
-                  </h3>
+                  <h3 className="nav-title">{footerTr.titles[title]}</h3>
                   <img
                     className={`${
                       isActive === idx ? "arrow-one" : "arrow-two"
@@ -58,7 +56,11 @@ function Footer() {
                 </div>
               </div>
 
-              <div className={`overflow-hidden transition-[max-height] duration-300 ${isActive === idx ? "max-h-[500px]" : "max-h-0"}`}>
+              <div
+                className={`overflow-hidden transition-[max-height] duration-300 ${
+                  isActive === idx ? "max-h-[500px]" : "max-h-0"
+                }`}
+              >
                 {elements.map(({ name, path }, idx) => (
                   <Link key={idx} className="item" to={path}>
                     {footerTr[name]}
