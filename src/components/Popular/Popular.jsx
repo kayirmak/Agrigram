@@ -9,10 +9,10 @@ import "./popular.scss";
 
 function Popular() {
   const dispatch = useDispatch();
-  const {products} = useSelector((state) => state.products);
+  const { products } = useSelector((state) => state.products);
 
-	const { t } = useTranslation();
-  const popularTr = t("popular", {returnObjects: true});
+  const { t } = useTranslation();
+  const popularTr = t("popular", { returnObjects: true });
 
   useEffect(() => {
     getProducts(dispatch);
@@ -20,7 +20,6 @@ function Popular() {
 
   return (
     <div className="popular">
-      <h2 className="popular-title">{popularTr.title}</h2>
       <div className="popular-items-scroll">
         <div className="popular-items">
           {products?.map((product, idx) => {
