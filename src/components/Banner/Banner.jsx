@@ -47,7 +47,7 @@ function Banner() {
       >
         <SwiperSlide>
           <video
-            className="max-w-full w-full h-full"
+            className="w-full"
             onEnded={handleVideoEnded}
             ref={videoRef}
             autoPlay
@@ -59,14 +59,14 @@ function Banner() {
           </video>
         </SwiperSlide>
       </Swiper>
-      <div className="flex items-center justify-center w-full h-full absolute left-0 top-0 z-20 bg-black opacity-70">
-        <Link to="yield-calculation">
-          <button className="bg-[#5ba29f] hover:bg-[#14988B] text-white font-bold py-2 px-4 rounded absolute z-30">
-            Вы можете рассчитать урожайность
-          </button>
-        </Link>
-      </div>
-
+      <Link
+        to="yield-calculation"
+        className="flex justify-center items-center w-full h-full absolute left-0 top-0 z-20 bg-black opacity-60"
+      >
+        <button className="bg-[#5ba29f] hover:bg-[#14988B] text-white font-bold py-2 px-4 rounded absolute z-30">
+          Вы можете рассчитать урожайность
+        </button>
+      </Link>
       {/* <div className="banner-items-scroll">
         <div className="banner-items">
           {banners.map((banner) => {

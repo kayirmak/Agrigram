@@ -7,15 +7,13 @@ const ServicePage = () => {
   const service = useSelector((state) => state?.service);
   const dispatch = useDispatch();
 
-  console.log(service);
-
   useEffect(() => {
     getAllService(dispatch);
   }, [dispatch]);
 
   return (
     <div className="max-w-[1440px] justify-between items-center px-8 py-7 flex mx-auto">
-      <ServiceCard />
+      <ServiceCard service={service?.service} />
     </div>
   );
 };
