@@ -133,9 +133,9 @@ const Authorization = () => {
                   </div>
                 </div>
 
-                <Link to="/Agrigram/auth/forgot-password" className="a">
+                {/* <Link to="/Agrigram/auth/forgot-password" className="a">
                   Ваш пароль
-                </Link>
+                </Link> */}
 
                 <div className="text-[red] h-4">{errorMessage}</div>
                 <Button
