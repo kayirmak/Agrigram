@@ -33,7 +33,7 @@ function Footer() {
   return (
     <footer className="footer">
       <Link to="/" className="footer-logo">
-        <img src={Logo} alt="kurjun" />
+        <img src={Logo} alt="agrigram" />
       </Link>
 
       {size <= 640 ? (
