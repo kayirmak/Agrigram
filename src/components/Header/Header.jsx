@@ -27,8 +27,6 @@ function Header() {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
   const [isActive, setIsActive] = useState(null);
   const [isLang, setIsLang] = useState("");
-  const { t, i18n } = useTranslation();
-  const headerTr = t("header", { returnObjects: true });
 
   const options = [
     { value: "ru", label: "рус", image: FlagIconRus },
@@ -91,7 +89,7 @@ function Header() {
         />
 
         <div onClick={() => setIsActive(null)} className="header-logo h-full">
-          <Link to="/">
+          <Link to="/Agrigram">
             <img className="max-w-[70%]" src={Logo} alt="agrigram" />
           </Link>
         </div>
@@ -124,7 +122,7 @@ function Header() {
                       key={idx}
                       to={path}
                     >
-                      {headerTr[title]}
+                      {title}
                     </Link>
                   ))}
                 </div>
@@ -150,13 +148,13 @@ function Header() {
           </div>
 
           <Link className="header-menu-item" to="yield-calculation">
-            {headerTr.yieldCalculation}
+            Расчет семян и саженцев
           </Link>
           <Link className="header-menu-item" to="service">
-            {headerTr.services}
+            Услуги
           </Link>
           <Link className="header-menu-item" to="stores">
-            {headerTr.farmers}
+            Фермеры
           </Link>
           {/* <div
             className="relative"
@@ -183,13 +181,13 @@ function Header() {
             />
           </div> */}
           <Link to="contacts" className="header-menu-item">
-            {headerTr.contacts}
+            Контакты
           </Link>
           <Link className="header-menu-item" to="stores">
-            {headerTr.news}
+            Новости
           </Link>
           <Link to="about-us" className="header-menu-item">
-            {headerTr.aboutus}
+            О нас
           </Link>
         </nav>
 
@@ -206,13 +204,13 @@ function Header() {
         </Link> */}
 
         <div className="header-icons">
-          <Link to={isAuth ? "/wish-list" : "/auth"}>
+          <Link to={isAuth ? "/wish-list" : "auth"}>
             <img src={FavoriteIcon} alt="agrigram-favorite" />
           </Link>
-          <Link to={isAuth ? "/cart" : "/auth"}>
+          <Link to={isAuth ? "/cart" : "auth"}>
             <img src={CartIcon} alt="agrigram-cart" />
           </Link>
-          <Link to="/profile/my-data">
+          <Link to="profile/my-data">
             <img src={Profile} alt="agrigram-profile" />
           </Link>
           <Select
@@ -256,7 +254,7 @@ function Header() {
                     key={idx}
                     to={path}
                   >
-                    {headerTr[title]}
+                    {title}
                   </Link>
                 ))}
               </div>

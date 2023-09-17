@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 
 import Loader from "../Loader/Loader";
 import Button from "../Button/Button";
@@ -28,9 +27,6 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-	const { t } = useTranslation();
-	const registerTr = t("register", { returnObjects: true });
-
   const {
     register,
     watch,
@@ -52,7 +48,7 @@ const Register = () => {
   useEffect(() => {
     return () => {
       dispatch(clearAuthError());
-    }
+    };
   }, []);
 
   const successReq = () => {
@@ -74,7 +70,7 @@ const Register = () => {
   const signInWithGoogle = async () => {
     const userByGoogle = await signInWithPopup(auth, provider);
     authWithGoogle(dispatch, userByGoogle, successReq);
-  }
+  };
 
   return (
     <section className="authorization">
@@ -82,19 +78,22 @@ const Register = () => {
         <div className="authorization-shadow">
           <div className="register">
             <div className="register-block">
-							<div className="frame">
-              	<img src={Frame} alt="Frame" />
-							</div>
+              <div className="frame">
+                <img src={Frame} alt="Frame" />
+              </div>
               <div className="register-el">
-                <h2 className="title">{registerTr.title}</h2>
-                <form className="form auth-form" onSubmit={handleSubmit(onSubmit)}>
+                <h2 className="title">Привет, давай начнем!</h2>
+                <form
+                  className="form auth-form"
+                  onSubmit={handleSubmit(onSubmit)}
+                >
                   <div className="auth-form-item">
                     <input
                       {...register("userName", {
-                        required: `${registerTr.required}`,
+                        required: `Поле обязательно к заполнению`,
                       })}
                       type="text"
-                      placeholder={registerTr.namePlaceholder}
+                      placeholder="Имя пользователя"
                     />
                     <div className="h-4">
                       {errors?.userName && (
@@ -108,14 +107,14 @@ const Register = () => {
                   <div className="auth-form-item">
                     <input
                       {...register("email", {
-                        required: `${registerTr.required}`,
+                        required: `Поле обязательно к заполнению`,
                         pattern: {
                           value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: `${registerTr.emailMessage}`,
+                          message: `Некорректный email`,
                         },
                       })}
                       type="text"
-                      placeholder={registerTr.emailPlaceholder}
+                      placeholder="Ваш email"
                     />
                     <div className="h-4">
                       {errors?.email && (
@@ -130,16 +129,23 @@ const Register = () => {
                     <div className="auth-form-item-pass">
                       <input
                         {...register("password", {
-                          required: `${registerTr.required}`,
+                          required: `Поле обязательно к заполнению`,
                         })}
                         type={showPassword ? "text" : "password"}
-                        placeholder={registerTr.passPlaceholder}
+                        placeholder="Пароль"
                       />
 
-                      <div className="toggle-pass" onClick={() => setShowPassword(!showPassword)}>
+                      <div
+                        className="toggle-pass"
+                        onClick={() => setShowPassword(!showPassword)}
+                      >
                         <div className="img">
                           <img className="" src={ShowPassword} />
-                          {showPassword ? <img className="img-slash" src={NounSlash} /> : ""}
+                          {showPassword ? (
+                            <img className="img-slash" src={NounSlash} />
+                          ) : (
+                            ""
+                          )}
                         </div>
                       </div>
                     </div>
@@ -157,21 +163,30 @@ const Register = () => {
                     <div className="auth-form-item-pass">
                       <input
                         {...register("confirmPassword", {
-                          required: `${registerTr.required}`,
+                          required: `Поле обязательно к заполнению`,
                           validate: (val) => {
                             if (watch("password") != val) {
-                              return registerTr.confPassValidate;
+                              return "Пароли не совпадают";
                             }
                           },
                         })}
                         type={showConfirmPassword ? "text" : "password"}
-                        placeholder={registerTr.confPassPlaceholder}
+                        placeholder="Подтвердить пароль"
                       />
 
-                      <div className="toggle-pass" onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+                      <div
+                        className="toggle-pass"
+                        onClick={() =>
+                          setShowConfirmPassword(!showConfirmPassword)
+                        }
+                      >
                         <div className="img">
                           <img className="" src={ShowPassword} />
-                          {showConfirmPassword ? <img className="img-slash" src={NounSlash} /> : ""}
+                          {showConfirmPassword ? (
+                            <img className="img-slash" src={NounSlash} />
+                          ) : (
+                            ""
+                          )}
                         </div>
                       </div>
                     </div>
@@ -190,26 +205,26 @@ const Register = () => {
                     disabled={!isValid || loading}
                     className="btn flex justify-center items-center"
                   >
-                    {loading ? <Loader /> : `${registerTr.btn}`}
+                    {loading ? <Loader /> : `Войти`}
                   </Button>
                 </form>
 
                 <div className="description">
-									{registerTr.desc[0]}
+                  Регистрируясь, вы автоматически соглашаетесь с
                 </div>
                 <a href="#" className="link">
-									{registerTr.desc[1]}
+                  словиями Пользовательского соглашения
                 </a>
-                <h3 className="or">{registerTr.or}</h3>
-                <h4 className="des">{registerTr.withOut}</h4>
+                <h3 className="or">или</h3>
+                <h4 className="des">зарегистрироваться через</h4>
                 <div className="social">
                   <button onClick={signInWithGoogle}>
                     <img src={Google} alt="socialMedia-icon" />
                   </button>
                 </div>
                 <div className="bottom-link">
-									{registerTr.links[0]}
-                  <Link to="/auth/sign-in">{registerTr.links[1]}</Link>
+                  У вас есть аккаунт?
+                  <Link to="/Agrigram/auth/sign-in">Зарегистрироваться</Link>
                 </div>
               </div>
             </div>

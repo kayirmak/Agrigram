@@ -43,7 +43,7 @@ function Footer() {
                   onClick={() => handleClickIsActive(idx)}
                   className="nav-el"
                 >
-                  <h3 className="nav-title">{footerTr.titles[title]}</h3>
+                  <h3 className="nav-title">{title}</h3>
                   <img
                     className={`${
                       isActive === idx ? "arrow-one" : "arrow-two"
@@ -61,7 +61,7 @@ function Footer() {
               >
                 {elements.map(({ name, path }, idx) => (
                   <Link key={idx} className="item" to={path}>
-                    {footerTr[name]}
+                    {name}
                   </Link>
                 ))}
               </div>
@@ -69,7 +69,7 @@ function Footer() {
           ))}
 
           <div className="nav-social">
-            <h3 className="nav-social-title">{footerTr.socialMedia}</h3>
+            <h3 className="nav-social-title">Мы в соц. сетях</h3>
             <div className="nav-social-items">
               {footerContacts.map(({ icon }, idx) => (
                 <a key={idx} href="#">
@@ -81,39 +81,39 @@ function Footer() {
 
           <a className="footer-nav-link" href="/">
             <img className="w-14 h-14" src={Logo} alt="logo" />
-            <p>{footerTr.dowApp}</p>
+            <p>Скачать приложение</p>
           </a>
         </nav>
       ) : (
         <nav className="footer-nav">
           <div className="nav">
-            <h3 className="nav-title">{footerTr.titles.one}</h3>
+            <h3 className="nav-title">О нас</h3>
             <Link className="nav-item" to="/stores">
-              {footerTr.stores}
+              Магазины
             </Link>
             <Link className="nav-item" to="/category">
-              {footerTr.categories}
+              Категории
             </Link>
             <Link className="nav-item" to="/contacts">
-              {footerTr.contacts}
+              Контакты
             </Link>
           </div>
 
           <div className="nav">
-            <h3 className="nav-title">{footerTr.titles.two}</h3>
+            <h3 className="nav-title">Помощь</h3>
             <Link to="technical-support" className="nav-item">
-              {footerTr.texSupport}
+              Тех. поддержка
             </Link>
             <Link to="user-agreement-page" className="nav-item">
-              {footerTr.userAgreement}
+              Пользовательское соглашение
             </Link>
             <Link to="privacy-policy-page" className="nav-item">
-              {footerTr.privacyPolicy}
+              Политика конфиденциальности
             </Link>
           </div>
 
           <div className="nav">
-            <h3 className="nav-title">{footerTr.socialMedia}</h3>
+            <h3 className="nav-title">Мы в соц. сетях</h3>
             <a className="nav-item" href="#">
               Facebook
             </a>

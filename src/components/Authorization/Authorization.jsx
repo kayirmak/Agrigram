@@ -12,7 +12,6 @@ import { clearAuthError } from "../../store/auth/authSlice";
 
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../../firebase.config";
-import { useTranslation } from "react-i18next";
 
 import Uzor from "../../assets/imgs/autorization/kai.svg";
 import Frame from "../../assets/imgs/autorization/Rectangle.svg";
@@ -27,9 +26,6 @@ const Authorization = () => {
   const errorMessage = useSelector((state) => state.auth.error);
 
   const [showPassword, setShowPassword] = useState(false);
-
-	const { t } = useTranslation();
-	const authorizationTr = t("authorization", { returnObjects: true })
 
   const {
     register,
@@ -47,7 +43,7 @@ const Authorization = () => {
   useEffect(() => {
     return () => {
       dispatch(clearAuthError());
-    }
+    };
   }, []);
 
   const fromPage = location.state?.from?.pathname || "/";
@@ -68,31 +64,31 @@ const Authorization = () => {
   const signInWithGoogle = async () => {
     const userByGoogle = await signInWithPopup(auth, provider);
     authWithGoogle(dispatch, userByGoogle, successReq);
-  }
+  };
 
   return (
     <section className="authorization">
       <div className="authorization-container">
         <div className="authorization-shadow">
           <div className="authorization-block">
-						<div className="frame">
-            	<img src={Frame} alt="Frame-icon" />
-						</div>
+            <div className="frame">
+              <img src={Frame} alt="Frame-icon" />
+            </div>
             <div className="authorization-block-el">
-              <h2 className="title">{authorizationTr.title}</h2>
+              <h2 className="title">Привет, рады вас видеть снова!</h2>
               <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
                 <div className="auth-form-item">
                   <input
                     {...register("email", {
-                      required: `${authorizationTr.emailRequired}`,
+                      required: `Поле обязательно к заполнению`,
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: `${authorizationTr.emailMessage}`,
+                        message: `Некорректный email`,
                       },
                     })}
                     className="input"
                     type="text"
-                    placeholder={authorizationTr.emailPlaceholder}
+                    placeholder="Ваш email"
                   />
                   <div className="h-4">
                     {errors?.email && (
@@ -107,17 +103,24 @@ const Authorization = () => {
                   <div className="auth-form-item-pass">
                     <input
                       {...register("password", {
-                        required: `${authorizationTr.passRequired}`,
+                        required: `Поле обязательно к заполнению`,
                       })}
                       className="input"
                       type={showPassword ? "text" : "password"}
-                      placeholder={authorizationTr.passPlaceholder}
+                      placeholder="Ваш парол"
                     />
 
-                    <div className="toggle-pass" onClick={() => setShowPassword(!showPassword)}>
+                    <div
+                      className="toggle-pass"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
                       <div className="img">
                         <img className="" src={ShowPassword} />
-                        {showPassword ? <img className="img-slash" src={NounSlash} /> : ""}
+                        {showPassword ? (
+                          <img className="img-slash" src={NounSlash} />
+                        ) : (
+                          ""
+                        )}
                       </div>
                     </div>
                   </div>
@@ -130,8 +133,8 @@ const Authorization = () => {
                   </div>
                 </div>
 
-                <Link to="/auth/forgot-password" className="a">
-									{authorizationTr.passPlaceholder}
+                <Link to="/Agrigram/auth/forgot-password" className="a">
+                  Ваш пароль
                 </Link>
 
                 <div className="text-[red] h-4">{errorMessage}</div>
@@ -139,19 +142,19 @@ const Authorization = () => {
                   className="btn flex justify-center items-center"
                   disabled={!isValid || loading}
                 >
-                  {loading ? <Loader /> : `${authorizationTr.btn}`}
+                  {loading ? <Loader /> : `Войти`}
                 </Button>
               </form>
-              <h3 className="or">{authorizationTr.or}</h3>
-              <h4 className="without">{authorizationTr.withOut}</h4>
+              <h3 className="or">или</h3>
+              <h4 className="without">войти через</h4>
               <div className="social">
                 <button onClick={signInWithGoogle}>
                   <img src={Google} alt="socialMedia-icon" />
                 </button>
               </div>
               <div className="bottom-link ">
-								{authorizationTr.links[0]}
-                <Link to="/auth/sign-up">{authorizationTr.links[1]}</Link>
+                У вас нет аккаунта?
+                <Link to="/Agrigram/auth/sign-up">Зарегистрироваться</Link>
               </div>
             </div>
           </div>

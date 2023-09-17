@@ -44,14 +44,17 @@ import CalculatePage from "../pages/CalculatePage";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/Agrigram",
     element: <MainLayout />,
     children: [
       {
         index: true,
         element: <Main />,
       },
-      { path: "service", element: <ServicePage /> },
+      {
+        path: "service",
+        element: <ServicePage />,
+      },
       {
         path: "yield-calculation",
         element: <CalculatePage />,

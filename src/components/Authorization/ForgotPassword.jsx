@@ -20,50 +20,44 @@ const ForgotPassword = () => {
 
   const navigate = useNavigate();
 
-	const { t } = useTranslation();
+  const { t } = useTranslation();
   const forgotPasswordTr = t("forgotPassword", { returnObjects: true });
 
   const {
     register,
-    formState: {
-      isValid, errors
-    },
+    formState: { isValid, errors },
     reset,
-    handleSubmit
+    handleSubmit,
   } = useForm({
-    mode: "onChange"
+    mode: "onChange",
   });
 
   const onSubmit = (data) => {
     setLoading(true);
-    resetPassword({login: data.email})
+    resetPassword({ login: data.email })
       .then((res) => {
         setLoading(false);
         reset();
         navigate("/auth/verification");
       })
-      .catch(err => {
+      .catch((err) => {
         setLoading(false);
         setErrorMessage(err);
       });
-  }
+  };
 
   return (
     <section className="authorization">
       <div className="authorization-container">
         <div className="authorization-shadow">
           <div className="forgot-password">
-						<div className="frame">
-            	<img src={Frame} alt="Frame-icon" />
-						</div>
+            <div className="frame">
+              <img src={Frame} alt="Frame-icon" />
+            </div>
             <div className="forgot-password-el">
               <div>
-                <h2 className="title">
-                  {forgotPasswordTr.title}
-                </h2>
-                <p className="p">
-									{forgotPasswordTr.desc}
-                </p>
+                <h2 className="title">{forgotPasswordTr.title}</h2>
+                <p className="p">{forgotPasswordTr.desc}</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <input
                     {...register("email", {
@@ -85,7 +79,7 @@ const ForgotPassword = () => {
                       </span>
                     )}
                   </div>
-                  
+
                   <div className="text-[red] mt-[1.875rem]">{errorMessage}</div>
                   <Button
                     className="btn flex justify-center items-center"
@@ -97,8 +91,10 @@ const ForgotPassword = () => {
               </div>
 
               <div className="bottom-link">
-								{forgotPasswordTr.linkDesc}
-                <Link to="/auth/sign-in">{forgotPasswordTr.linkBtn}</Link>
+                {forgotPasswordTr.linkDesc}
+                <Link to="/Agrigram/auth/sign-in">
+                  {forgotPasswordTr.linkBtn}
+                </Link>
               </div>
             </div>
           </div>

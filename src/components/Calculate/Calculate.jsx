@@ -26,16 +26,9 @@ function Calculate() {
   const onSubmit = (data) => {
     setValue("numberRowArea", Math.round(data.lengthArea / data.beetRowArea));
     const numberRowArea = Math.round(data.lengthArea / data.beetRowArea);
-    setSeedsResult(
-      (data.lengthArea / data.beetSeedsArea == 0 ? 1 : data.beetSeedsArea) *
-        numberRowArea
-    );
+    setSeedsResult((data.lengthArea / data.beetSeedsArea) * numberRowArea);
     setSeedlingsResult(
-      Math.round(
-        (data.lengthArea / data.beetSeedlingsArea == 0
-          ? 1
-          : data.beetSeedlingsArea) * numberRowArea
-      )
+      Math.round((data.lengthArea / data.beetSeedlingsArea) * numberRowArea)
     );
   };
 
@@ -81,7 +74,7 @@ function Calculate() {
   return (
     <div className="calculate">
       <h2 className="text-4xl text-center font-bold mb-16">
-        Расчет урожайности
+        Расчет семян и саженцев
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -235,7 +228,9 @@ function Calculate() {
           Расчитать
         </Button>
       </form>
-      <hr className="my-12" />
+      <p className="text-xs mt-12">Значения в метрах</p>
+
+      <hr className="mb-12" />
       <div className="flex gap-x-5">
         <div className="flex w-max p-5 gap-x-8 rounded-xl bg-[#1ab394]">
           <img src="https://calculators.agroinform.asia/images/seeds.png" />
