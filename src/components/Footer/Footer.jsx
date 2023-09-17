@@ -8,8 +8,6 @@ import Logo from "../../assets/imgs/agri/LogoAgri.svg";
 
 import { footerContacts, footerNavLinks } from "../../data";
 
-import FooterKurgunIcon from "../../assets/imgs/agri/LogoAgri.svg";
-
 import "./footer.scss";
 
 function Footer() {
@@ -33,7 +31,7 @@ function Footer() {
   return (
     <footer className="footer">
       <Link to="/" className="footer-logo">
-        <img src={Logo} alt="agrigram" />
+        <img src={Logo} alt="agrigramLogo" />
       </Link>
 
       {size <= 640 ? (
@@ -82,7 +80,7 @@ function Footer() {
           </div>
 
           <a className="footer-nav-link" href="/">
-            <img src={FooterKurgunIcon} alt="KurgunIcon" />
+            <img className="w-14 h-14" src={Logo} alt="logo" />
             <p>{footerTr.dowApp}</p>
           </a>
         </nav>

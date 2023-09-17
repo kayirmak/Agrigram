@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { commands } from "./commands";
 
-// const baseUrl = "https://kurjun-ex.kg/kurjun/api/";
+const baseUrl = "https://kurjun-ex.kg/kurjun/api/";
 
 const sendRequest = (cmd, body = null, id, headers) => {
   return new Promise((resolve, reject) => {

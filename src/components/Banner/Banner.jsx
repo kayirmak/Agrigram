@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import sendRequest from "../../api";
 
@@ -7,14 +7,22 @@ import { Pagination, Autoplay } from "swiper";
 
 import BannerImg from "../../assets/imgs/banner/banner.svg";
 import BannerImage from "../../assets/imgs/agri/bann.png";
+import AgroVideo from "../../assets/video/agroVideo.mp4";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "./banner.scss";
+import { Link } from "react-router-dom";
 
 function Banner() {
   const [banners, setBanners] = useState([]);
+  const videoRef = useRef(null);
+
+  const handleVideoEnded = () => {
+    videoRef.current.play();
+  };
+
   useEffect(() => {
     getBanners();
   }, []);
@@ -24,7 +32,7 @@ function Banner() {
   };
 
   return (
-    <div className="banner">
+    <div className="banner relative">
       <Swiper
         spaceBetween={30}
         pagination={{
@@ -35,32 +43,31 @@ function Banner() {
           disableOnInteraction: false,
         }}
         modules={[Pagination, Autoplay]}
-        className="mySwiper h-[35rem] lm:hidden"
+        className="mySwiper"
       >
         <SwiperSlide>
-          <a href="#">
-            <img
-              className="banner-img w-full h-[35rem] object-cover"
-              src={BannerImage}
-            />
-          </a>
+          <video
+            className="max-w-full w-full h-full"
+            onEnded={handleVideoEnded}
+            ref={videoRef}
+            autoPlay
+            muted
+          >
+            <source src={AgroVideo} type="video/mp4" />
+            <source src={AgroVideo} type="video/webm" />
+            <source src={AgroVideo} type="video/ogg" />
+          </video>
         </SwiperSlide>
-
-        {/* {banners.map((banner) => {
-          return (
-            <SwiperSlide key={banner.id}>
-              <a href={banner.link}>
-                <img
-                  className="banner-img w-full h-[30.9rem] object-contain"
-                  src={banner.photo}
-                />
-              </a>
-            </SwiperSlide>
-          );
-        })} */}
       </Swiper>
+      <div className="flex items-center justify-center w-full h-full absolute left-0 top-0 z-20 bg-black opacity-70">
+        <Link to="yield-calculation">
+          <button className="bg-[#5ba29f] hover:bg-[#14988B] text-white font-bold py-2 px-4 rounded absolute z-30">
+            Вы можете рассчитать урожайность
+          </button>
+        </Link>
+      </div>
 
-      <div className="banner-items-scroll">
+      {/* <div className="banner-items-scroll">
         <div className="banner-items">
           {banners.map((banner) => {
             return (
@@ -70,7 +77,7 @@ function Banner() {
             );
           })}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

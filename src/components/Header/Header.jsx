@@ -141,7 +141,8 @@ function Header() {
                   onClick={() => {
                     setIsActiveMenu(false), setIsActive(null);
                   }}
-                  src={MobLogo}
+                  src={Logo}
+                  className="h-14 w-14"
                   alt="agrigram"
                 />
               </Link>
@@ -151,7 +152,7 @@ function Header() {
           <Link className="header-menu-item" to="yield-calculation">
             {headerTr.yieldCalculation}
           </Link>
-          <Link className="header-menu-item" to="stores">
+          <Link className="header-menu-item" to="service">
             {headerTr.services}
           </Link>
           <Link className="header-menu-item" to="stores">

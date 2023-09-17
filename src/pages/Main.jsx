@@ -8,32 +8,30 @@ import Products from "../components/Products/Products";
 import { CartContext } from "../hoc/CartProvider";
 
 function Main() {
-	const [size, setSize] = useState(window.innerWidth);
-  const {getItems} = useContext(CartContext);
+  const [size, setSize] = useState(window.innerWidth);
+  const { getItems } = useContext(CartContext);
 
-	window.addEventListener("resize", function () {
-		setSize(window.innerWidth);
-	});
+  window.addEventListener("resize", function () {
+    setSize(window.innerWidth);
+  });
 
   useEffect(() => {
     document.body.scrollIntoView({
-      block: "start", 
+      block: "start",
       behavior: "smooth",
     });
 
     const unsubscribe = getItems();
     return unsubscribe;
-  }, [])
-  
+  }, []);
+
   return (
     <div className="main max-w-[1440px] mx-auto">
-			{size <= 962 ? <Category  /> : null }
+      {/* {size <= 962 ? <Category /> : null} */}
       <Banner />
-      {size <= 962 ? null : <Category  />}
-      <Products />
-      <Advantage />
-      <Popular />
-      <Partners />
+      {/* {size <= 962 ? null : <Category />} */}
+      {/* <Products /> */}
+      {/* <Advantage /> */}
     </div>
   );
 }

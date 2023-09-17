@@ -39,6 +39,7 @@ import Completed from "../components/Cart/Completed";
 import TechnicalSupport from "../pages/TechnicalSupport";
 import UserAgreementPage from "../pages/UserAgreement";
 import PrivacyPolicyPage from "../pages/PrivacyPolicy";
+import ServicePage from "../pages/ServicePage";
 import CalculatePage from "../pages/CalculatePage";
 
 const router = createBrowserRouter([
@@ -50,6 +51,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Main />,
       },
+      { path: "service", element: <ServicePage /> },
       {
         path: "yield-calculation",
         element: <CalculatePage />,
