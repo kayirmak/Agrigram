@@ -39,6 +39,7 @@ import Completed from "../components/Cart/Completed";
 import TechnicalSupport from "../pages/TechnicalSupport";
 import UserAgreementPage from "../pages/UserAgreement";
 import PrivacyPolicyPage from "../pages/PrivacyPolicy";
+import ServicePage from "../pages/ServicePage";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Main />,
+      },
+      {
+        path: "service",
+        element: <ServicePage />,
       },
       {
         path: "search-product",

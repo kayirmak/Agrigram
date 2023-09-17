@@ -16,6 +16,7 @@ import cartSlice from "./cart/cartSlice";
 import categorySlice from "./category/categorySlice";
 import productsSlice from "./products/productsSlice";
 import shopsSlice from "./shop/shopsSlice";
+import serviceSlice from  "./service/serviceSlice";
 
 const rootPersistConfig = {
   key: "root",
@@ -40,7 +41,8 @@ const rootReducer = combineReducers({
   products: productsSlice,
 	category: categorySlice,
 	shops: shopsSlice,
-  cart: persistReducer(favsPersistConfig, cartSlice)
+  cart: persistReducer(favsPersistConfig, cartSlice),
+  service: serviceSlice,
 })
 
 const persistedReducer = persistReducer(rootPersistConfig, rootReducer);
