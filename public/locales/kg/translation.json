@@ -1,8 +1,11 @@
 {
   "header": {
-    "stores": "Дүкөндөр",
+    "yieldCalculation": "Кирешелүүлүгүн эсептөө",
+    "services": "Кызматтар",
+    "farmers": "Дыйкандар",
     "categories": "Категориялар",
     "contacts": "Байланыш",
+    "news": "Жанылыктар",
     "aboutus": "Биз жөнүндө",
     "search": "Издөө"
   },
@@ -449,15 +452,15 @@
     "store": "Дүкөн"
   },
 
-	"categoryList": {
-		"titleOne": "Тамак-аш азыктары",
-		"titleTwo": "Турмуш-тиричилик техникасы",
-		"titleThree": "Төрт буттуу достор үчүн тоют"
-	},
+  "categoryList": {
+    "titleOne": "Тамак-аш азыктары",
+    "titleTwo": "Турмуш-тиричилик техникасы",
+    "titleThree": "Төрт буттуу достор үчүн тоют"
+  },
 
-	"storeCard": {
-		"after": "баштап",
-		"before" : "чейин",
-		"delivery": "Жеткирүү"
-	}
+  "storeCard": {
+    "after": "баштап",
+    "before": "чейин",
+    "delivery": "Жеткирүү"
+  }
 }

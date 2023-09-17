@@ -27,11 +27,11 @@ function Main() {
 
   return (
     <div className="main max-w-[1440px] mx-auto">
-      {size <= 962 ? <Category /> : null}
+      {/* {size <= 962 ? <Category /> : null} */}
       <Banner />
-      {size <= 962 ? null : <Category />}
-      <Products />
-      <Advantage />
+      {/* {size <= 962 ? null : <Category />} */}
+      {/* <Products /> */}
+      {/* <Advantage /> */}
     </div>
   );
 }

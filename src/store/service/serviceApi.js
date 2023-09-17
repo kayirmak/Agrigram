@@ -6,7 +6,6 @@ const getAllService = async (dispatch) => {
   try {
     const res = await sendRequest("getAllService");
     dispatch(getAllServiceSuccess(res.data.results));
-    console.log(res)
   } catch (error) {
     dispatch(getAllServiceFailure(error.message));
   }

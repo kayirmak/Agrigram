@@ -90,9 +90,9 @@ function Header() {
           } `}
         />
 
-        <div onClick={() => setIsActive(null)} className="header-logo">
+        <div onClick={() => setIsActive(null)} className="header-logo h-full">
           <Link to="/">
-            <img className="max-w-[80%]" src={Logo} alt="agrigram" />
+            <img className="max-w-[70%]" src={Logo} alt="agrigram" />
           </Link>
         </div>
 
@@ -141,17 +141,24 @@ function Header() {
                   onClick={() => {
                     setIsActiveMenu(false), setIsActive(null);
                   }}
-                  src={MobLogo}
+                  src={Logo}
+                  className="h-14 w-14"
                   alt="agrigram"
                 />
               </Link>
             </div>
           </div>
 
-          <Link className="header-menu-item" to="stores">
-            {headerTr.stores}
+          <Link className="header-menu-item" to="yield-calculation">
+            {headerTr.yieldCalculation}
           </Link>
-          <div
+          <Link className="header-menu-item" to="service">
+            {headerTr.services}
+          </Link>
+          <Link className="header-menu-item" to="stores">
+            {headerTr.farmers}
+          </Link>
+          {/* <div
             className="relative"
             onClick={() => setVisibleMenu(false)}
             onMouseOver={() => {
@@ -174,16 +181,19 @@ function Header() {
               visibleMenu={visibleMenu}
               setVisibleMenu={setVisibleMenu}
             />
-          </div>
+          </div> */}
           <Link to="contacts" className="header-menu-item">
             {headerTr.contacts}
+          </Link>
+          <Link className="header-menu-item" to="stores">
+            {headerTr.news}
           </Link>
           <Link to="about-us" className="header-menu-item">
             {headerTr.aboutus}
           </Link>
         </nav>
 
-        <Link to="/search-product">
+        {/* <Link to="/search-product">
           <div className="header-search search">
             <img className="search-icon" src={SearchIcon} />
             <input
@@ -193,7 +203,7 @@ function Header() {
               placeholder={headerTr.search}
             />
           </div>
-        </Link>
+        </Link> */}
 
         <div className="header-icons">
           <Link to={isAuth ? "/wish-list" : "/auth"}>

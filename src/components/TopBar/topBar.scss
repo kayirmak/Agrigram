@@ -2,10 +2,10 @@
   @apply hidden sm:block relative z-10;
 
   &-block {
-    @apply flex items-center justify-between h-[4rem] bg-[#FF5714] px-4;
+    @apply flex items-center justify-between h-[4rem] bg-[#14988B] px-4;
 
 		.input-search {
-			@apply max-w-[14.375rem] border-white rounded-2xl border-[1px] placeholder:text-white text-white bg-[#FF5714]
+			@apply max-w-[14.375rem] border-white rounded-2xl border-[1px] placeholder:text-white text-white bg-[#14988B]
 		}
 
 		p {
@@ -13,7 +13,7 @@
 		}
 
 		.active {
-			@apply bg-[#FF8C5F]
+			@apply bg-[#77bcb7]
 		}
   }
 
